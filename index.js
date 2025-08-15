@@ -5,13 +5,13 @@ const people = [
   { name: "Tandra", age: 27, gender: "male" },
 ];
 
-function getMaleNames(arr) {
+function maleName(arr) {
   return arr
     .filter(person => person.gender === "male")
     .map(person => person.name);
 }
 
-console.log(getMaleNames(people));  // Output: [ 'Jhankar', 'Hamid', 'hasnain',]
+console.log(maleName(people));  // Output: [ 'Jhankar', 'Hamid', 'hasnain',]
 
 
 const books = [
@@ -19,8 +19,20 @@ const books = [
   { title: "Hate Khori", author: "Jhankar", year: 2010 }
 ];
 
-function getBookTitles(arr) {
+function bookTitle(arr) {
   return arr.map(book => book.title);
 }
 
-console.log(getBookTitles(books)); // Output: [ 'Node js', 'Hate Khori' ]
+console.log(bookTitle(books)); // Output: [ 'Node js', 'Hate Khori' ]
+
+const square = a => a * a;     
+const double = a => a * 2;     
+const addFive = a => a + 5;    
+
+function composed(num) {
+  return addFive(double(square(num)));
+}
+
+console.log(composed(3)); // Output: 23
+
+
