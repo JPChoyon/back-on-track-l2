@@ -36,3 +36,31 @@ function composed(num) {
 console.log(composed(3)); // Output: 23
 
 
+const cars = [
+  { make: "Toyota", model: "Corolla", year: 2015 },
+  { make: "Honda", model: "Civic", year: 2010 },
+  { make: "Ford", model: "Focus", year: 2018 }
+];
+
+cars.sort((a, b) => a.year - b.year);
+console.log(cars);
+// output: [
+// { make: 'Honda', model: 'Civic', year: 2010 },
+// { make: 'Toyota', model: 'Corolla', year: 2015 },
+// { make: 'Ford', model: 'Focus', year: 2018 }
+// ]
+
+let peopleList = [
+  { name: "John", age: 25 },
+  { name: "Anna", age: 22 }
+];
+
+function updateAge(arr, personName, newAge) {
+  const person = arr.find(person => person.name === personName);
+  if (person) {
+    person.age = newAge;
+  }
+}
+
+updateAge(peopleList, "Anna", 30);
+console.log(peopleList); // Output: [ { name: 'John', age: 25 }, { name: 'Anna', age: 30 } ]
